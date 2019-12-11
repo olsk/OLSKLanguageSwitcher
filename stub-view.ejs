@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		window.OLSKPublicConstants = function (inputData) {
+			return {
+				OLSKSharedPageCurrentLanguage: '<%= OLSKSharedPageCurrentLanguage %>',
+				OLSKSharedActiveRouteConstant: '<%= OLSKSharedActiveRouteConstant %>',
+			}[inputData];
+		};
+	</script>
+
+	<script src="/_shared/__external/OLSKRouting/main.js"></script>
+	<script type="text/javascript">
+		window.OLSKCanonicalFor = function(inputData, params) {
+			return OLSKRouting.OLSKRoutingCanonicalPathWithRoutePathAndOptionalParams((<%- JSON.stringify(['OLSKLanguageSwitcherSvelteStubRoute'].reduce(function (map, e) {
+				map[e] = OLSKRouteObjectFor(e).OLSKRoutePath;
+				return map;
+			}, {})) %>)[inputData], params);
+		};
+	</script>
+</head>
+<body>
+
+<% if (typeof OLSKLanguageSwitcherStubParams !== 'undefined') { -%>
+
+<%- include('./main.ejs', OLSKLanguageSwitcherStubParams) %>	
+
+<% } -%>
+
+<% if (typeof OLSKLanguageSwitcherStubParams === 'undefined') { -%>
+
+<script src="/<%= OLSKSharedPageControllerSlug %>/__compiled/ui-behaviour.js"></script>
+
+<% } -%>
+
+</body>
+</html>
