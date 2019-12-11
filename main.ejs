@@ -1,11 +1,11 @@
 <div class="OLSKLanguageSwitcher">
 
-<% OLSKLanguageSwitcherAvailable.forEach(function (e) { %>
-	<% if (e === OLSKLanguageSwitcherSelected) { %>
+<% OLSKSharedPageLanguagesAvailable.forEach(function (e) { %>
+	<% if (e === OLSKSharedPageCurrentLanguage) { %>
 		<span class="OLSKLanguageSwitcherSelected"><%= e.toUpperCase() %></span>
 	<% } %>
 
-	<% if (e !== OLSKLanguageSwitcherSelected) { %>
+	<% if (e !== OLSKSharedPageCurrentLanguage) { %>
 		<% _DataLinkTitle = OLSKFormatted(OLSKLocalized('OLSKLanguageSwitcherVersionFormat'), OLSKLocalized('OLSKLanguageSwitcherVersionName')[e]) %>
 		<a class="OLSKLanguageSwitcherVersion" aria-label="<%- _DataLinkTitle %>" title="<%- _DataLinkTitle %>" href="<%= OLSKCanonicalLocalizedFor(OLSKSharedActiveRouteConstant, {
 			OLSKRoutingLanguage: e,

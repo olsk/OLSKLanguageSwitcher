@@ -12,8 +12,6 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 
 			before(function() {
 				return browser.OLSKVisit(kDefaultRoute, {
-					OLSKLanguageSwitcherAvailable: JSON.stringify(kDefaultRoute.OLSKRouteLanguages),
-					OLSKLanguageSwitcherSelected: languageCode,
 					OLSKRoutingLanguage: languageCode,
 				});
 			});

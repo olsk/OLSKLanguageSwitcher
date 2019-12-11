@@ -1,6 +1,6 @@
 <script>
-export let OLSKLanguageSwitcherAvailable;
-export let OLSKLanguageSwitcherSelected;
+export let OLSKSharedPageLanguagesAvailable;
+export let OLSKSharedPageCurrentLanguage;
 export let OLSKSharedActiveRouteConstant;
 
 import OLSKInternational from 'OLSKInternational';
@@ -22,12 +22,12 @@ const mod = {
 
 <div class="OLSKLanguageSwitcher">
 
-{#each OLSKLanguageSwitcherAvailable as e}
-	{#if e === OLSKLanguageSwitcherSelected }
+{#each OLSKSharedPageLanguagesAvailable as e}
+	{#if e === OLSKSharedPageCurrentLanguage }
 		<span class="OLSKLanguageSwitcherSelected">{ e.toUpperCase() }</span>
 	{/if}
 
-	{#if e !== OLSKLanguageSwitcherSelected}
+	{#if e !== OLSKSharedPageCurrentLanguage}
 		<a class="OLSKLanguageSwitcherVersion" aria-label="{ mod.DataLinkTitle(e) }" title="{ mod.DataLinkTitle(e) }" href="{ window.OLSKCanonicalFor(OLSKSharedActiveRouteConstant, {
 			OLSKRoutingLanguage: e,
 		}) }">{ e.toUpperCase() }</a>	

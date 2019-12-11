@@ -5,10 +5,7 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 	describe(`OLSKLanguageSwitcher_Misc--${ kDefaultRoute.OLSKRouteSignature }`, function () {
 
 		before(function () {
-			return browser.OLSKVisit(kDefaultRoute, {
-				OLSKLanguageSwitcherAvailable: JSON.stringify(kDefaultRoute.OLSKRouteLanguages),
-				OLSKLanguageSwitcherSelected: 'en',
-			});
+			return browser.OLSKVisit(kDefaultRoute);
 		});
 
 		describe('OLSKLanguageSwitcherSelected', function () {

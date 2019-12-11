@@ -3,10 +3,11 @@
 <head>
 	<script type="text/javascript">
 		window.OLSKPublicConstants = function (inputData) {
-			return {
-				OLSKSharedPageCurrentLanguage: '<%= OLSKSharedPageCurrentLanguage %>',
-				OLSKSharedActiveRouteConstant: '<%= OLSKSharedActiveRouteConstant %>',
-			}[inputData];
+			return <%- JSON.stringify({
+				OLSKSharedActiveRouteConstant,
+				OLSKSharedPageCurrentLanguage,
+				OLSKSharedPageLanguagesAvailable,
+			}) %>[inputData];
 		};
 	</script>
 
@@ -22,13 +23,13 @@
 </head>
 <body>
 
-<% if (typeof OLSKLanguageSwitcherStubParams !== 'undefined') { -%>
+<% if (OLSKSharedActiveRouteConstant !== 'OLSKLanguageSwitcherSvelteStubRoute') { -%>
 
-<%- include('./main.ejs', OLSKLanguageSwitcherStubParams) %>	
+<%- include('./main.ejs') %>	
 
 <% } -%>
 
-<% if (typeof OLSKLanguageSwitcherStubParams === 'undefined') { -%>
+<% if (OLSKSharedActiveRouteConstant === 'OLSKLanguageSwitcherSvelteStubRoute') { -%>
 
 <script src="/<%= OLSKSharedPageControllerSlug %>/__compiled/ui-behaviour.js"></script>
 
