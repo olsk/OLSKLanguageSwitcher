@@ -1,4 +1,4 @@
 {
   "name": "OLSKLanguageSwitcher",
-  "main": "main.ejs"
+  "main": "main.svelte"
 }
