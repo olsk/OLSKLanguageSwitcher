@@ -17,7 +17,7 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 			});
 
 			it('localizes OLSKLanguageSwitcherVersion', function () {
-				const _DataLinkTitle = OLSKTestingStringWithFormat(uLocalized('OLSKLanguageSwitcherVersionFormat'), uLocalized('OLSKLanguageSwitcherVersionName')[kDefaultRoute.OLSKRouteLanguages.filter(function (e) { return e !== languageCode; })[0]]);
+				const _DataLinkTitle = require('OLSKString').OLSKStringWithFormat(uLocalized('OLSKLanguageSwitcherVersionFormat'), uLocalized('OLSKLanguageSwitcherVersionName')[kDefaultRoute.OLSKRouteLanguages.filter(function (e) { return e !== languageCode; })[0]]);
 				browser.assert.attribute(`${ OLSKLanguageSwitcherVersion }:first-of-type`, 'title', _DataLinkTitle);
 				browser.assert.attribute(`${ OLSKLanguageSwitcherVersion }:first-of-type`, 'aria-label', _DataLinkTitle);
 			});
