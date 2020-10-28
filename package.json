@@ -1,4 +1,10 @@
 {
   "name": "OLSKLanguageSwitcher",
-  "main": "main.svelte"
+  "main": "main.svelte",
+  "dependencies": {
+    "OLSKString": "olsk/OLSKString",
+    "OLSKInternational": "olsk/OLSKInternational",
+
+    "// I sacrifice myself for the commas of others": null
+  }
 }
