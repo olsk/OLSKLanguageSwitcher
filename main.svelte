@@ -3,11 +3,8 @@ export let OLSKSharedPageLanguagesAvailable;
 export let OLSKSharedPageCurrentLanguage;
 export let OLSKSharedActiveRouteConstant;
 
-import OLSKInternational from 'OLSKInternational';
+import { OLSKLocalized } from 'OLSKInternational';
 import OLSKString from 'OLSKString';
-const OLSKLocalized = function(translationConstant) {
-	return OLSKInternational.OLSKInternationalLocalizedString(translationConstant, JSON.parse(`{"OLSK_I18N_SEARCH_REPLACE":"OLSK_I18N_SEARCH_REPLACE"}`)[window.OLSKPublicConstants('OLSKSharedPageCurrentLanguage')]);
-};
 
 const mod = {
 
