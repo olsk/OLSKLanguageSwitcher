@@ -14,7 +14,7 @@
 	<script src="/_shared/__external/OLSKRouting/main.js"></script>
 	<script type="text/javascript">
 		window.OLSKCanonicalFor = function(inputData, params) {
-			return OLSKRouting.OLSKRoutingCanonicalPathWithRoutePathAndOptionalParams((<%- JSON.stringify(['OLSKLanguageSwitcherSvelteStubRoute'].reduce(function (map, e) {
+			return OLSKRouting.OLSKRoutingCanonicalPath((<%- JSON.stringify(['OLSKLanguageSwitcherSvelteStubRoute'].reduce(function (map, e) {
 				map[e] = OLSKRouteObjectFor(e).OLSKRoutePath;
 				return map;
 			}, {})) %>)[inputData], params);
