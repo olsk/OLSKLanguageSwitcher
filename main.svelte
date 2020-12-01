@@ -11,7 +11,7 @@ const mod = {
 	// DATA
 
 	DataLinkTitle (inputData) {
-		return OLSKString.OLSKStringWithFormat(OLSKLocalized('OLSKLanguageSwitcherVersionFormat'), OLSKLocalized('OLSKLanguageSwitcherVersionName')[inputData]);
+		return OLSKString.OLSKStringFormatted(OLSKLocalized('OLSKLanguageSwitcherVersionFormat'), OLSKLocalized('OLSKLanguageSwitcherVersionName')[inputData]);
 	},
 
 };
