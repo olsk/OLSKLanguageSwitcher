@@ -1,22 +1,20 @@
 exports.OLSKControllerRoutes = function() {
 	return [{
-		OLSKRoutePath: '/stub/OLSKLanguageSwitcherEJS',
+		OLSKRoutePath: '/',
 		OLSKRouteMethod: 'get',
 		OLSKRouteFunction (req, res, next) {
-			return res.render(require('path').join(__dirname, 'stub-view'));
+			return res.OLSKLayoutRender(require('path').join(__dirname, 'stub-view'));
 		},
 		OLSKRouteSignature: 'OLSKLanguageSwitcherEJSStubRoute',
 		OLSKRouteLanguageCodes: ['en', 'fr', 'es'],
-		OLSKRouteIsHidden: process.env.NODE_ENV === 'production',
 	}, {
-		OLSKRoutePath: '/stub/OLSKLanguageSwitcherSvelte',
+		OLSKRoutePath: '/svelte',
 		OLSKRouteMethod: 'get',
 		OLSKRouteFunction (req, res, next) {
-			return res.render(require('path').join(__dirname, 'stub-view'));
+			return res.OLSKLayoutRender(require('path').join(__dirname, 'stub-view'));
 		},
 		OLSKRouteSignature: 'OLSKLanguageSwitcherSvelteStubRoute',
 		OLSKRouteLanguageCodes: ['en', 'fr', 'es'],
-		OLSKRouteIsHidden: process.env.NODE_ENV === 'production',
 	}];
 };
 

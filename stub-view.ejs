@@ -1,27 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<script type="text/javascript">
-		window.OLSKPublicConstants = function (inputData) {
-			return <%- JSON.stringify({
-				OLSKSharedActiveRouteConstant,
-				OLSKSharedPageCurrentLanguage,
-				OLSKSharedPageLanguagesAvailable,
-			}) %>[inputData];
-		};
-	</script>
-
-	<script src="/node_modules/OLSKRouting/main.js"></script>
-	<script type="text/javascript">
-		window.OLSKCanonicalFor = function(inputData, params) {
-			return OLSKRouting.OLSKRoutingCanonicalPath((<%- JSON.stringify(['OLSKLanguageSwitcherSvelteStubRoute'].reduce(function (map, e) {
-				map[e] = OLSKRouteObjectFor(e).OLSKRoutePath;
-				return map;
-			}, {})) %>)[inputData], params);
-		};
-	</script>
-</head>
-<body>
+<%
+locals.OLSKPagePublicConstants = {
+	OLSKSharedActiveRouteConstant,
+	OLSKSharedPageCurrentLanguage,
+	OLSKSharedPageLanguagesAvailable,
+};
+locals.OLSKPagePublicRouteKeys = [
+	'OLSKLanguageSwitcherSvelteStubRoute',
+];
+locals._OLSKPageAssetFolder = [
+	'node_modules',
+];
+%>
 
 <% if (OLSKSharedActiveRouteConstant !== 'OLSKLanguageSwitcherSvelteStubRoute') { -%>
 
@@ -34,6 +23,3 @@
 <script src="/<%= OLSKSharedPageControllerSlug %>/__compiled/ui-behaviour.js"></script>
 
 <% } -%>
-
-</body>
-</html>
