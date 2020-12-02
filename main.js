@@ -74,7 +74,7 @@ const mod = {
 		].concat(params.ParamLanguageCodes.filter(function (e) {
 			return e !== params.ParamCurrentLanguage;
 		}).map(function (ParamLanguageCode) {
-			return mod.OLSKLanguageSwitcherLauncherItemSwitch(Object.assign(params, {
+			return mod.OLSKLanguageSwitcherLauncherItemSwitch(Object.assign(Object.assign(Object.assign({}, params), {}), {
 				ParamLanguageCode,
 			}))
 		})).filter(function (e) {
