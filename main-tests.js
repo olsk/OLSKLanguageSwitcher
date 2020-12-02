@@ -163,11 +163,9 @@ describe('OLSKLanguageSwitcherRecipes', function test_OLSKLanguageSwitcherRecipe
 		return mod.OLSKLanguageSwitcherRecipes(Object.assign({
 			ParamLanguageCodes: [],
 			ParamCurrentLanguage: Math.random().toString(),
-			ParamLanguageCode: Math.random().toString(),
 			ParamSpecUI: false,
 			ParamWindow: uWindow(),
 			OLSKLocalized: uLocalized,
-			ParamLanguageCode: Math.random().toString(),
 			ParamRouteConstant: Math.random().toString(),
 			OLSKFormatted: uFormatted,
 			OLSKCanonicalFor: uCanonical,

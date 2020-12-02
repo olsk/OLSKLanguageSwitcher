@@ -36,8 +36,6 @@ const mod = {
 			throw new Error('OLSKErrorInputNotValid');
 		}
 
-		const _this = this;
-
 		return {
 			LCHRecipeSignature: ['OLSKLanguageSwitcherLauncherItemSwitch', params.ParamLanguageCode].join('-'),
 			LCHRecipeName: params.OLSKFormatted(params.OLSKLocalized('OLSKLanguageSwitcherVersionFormat'), params.OLSKLocalized('OLSKLanguageSwitcherVersionName', params.ParamLanguageCode)[params.ParamLanguageCode]),
