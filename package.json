@@ -1,6 +1,6 @@
 {
   "name": "OLSKLanguageSwitcher",
-  "main": "main.svelte",
+  "main": "main.js",
   "scripts": {
     "start": "olsk-express .",
     "test": "olsk-spec"
