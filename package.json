@@ -1,10 +1,18 @@
 {
   "name": "OLSKLanguageSwitcher",
   "main": "main.svelte",
+  "scripts": {
+    "start": "olsk-express .",
+    "test": "olsk-spec"
+  },
   "dependencies": {
     "OLSKString": "olsk/OLSKString",
     "OLSKInternational": "olsk/OLSKInternational",
-
+    "// I sacrifice myself for the commas of others": null
+  },
+  "devDependencies": {
+    "OLSKSpec": "olsk/OLSKSpec",
+  	"OLSKRouting": "olsk/OLSKRouting",
     "// I sacrifice myself for the commas of others": null
   }
 }
