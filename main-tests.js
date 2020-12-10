@@ -221,7 +221,7 @@ describe('OLSKLanguageSwitcherRecipes', function test_OLSKLanguageSwitcherRecipe
 		}, []));
 	});
 
-	context('OLSK_IS_TESTING_BEHAVIOUR', function () {
+	context('ParamSpecUI', function () {
 
 		it('returns all recipes if true', function () {
 			deepEqual(_OLSKLanguageSwitcherRecipes({
