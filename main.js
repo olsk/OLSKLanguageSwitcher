@@ -32,7 +32,7 @@ const mod = {
 			throw new Error('OLSKErrorInputNotValid');
 		}
 
-		if (typeof params.OLSKCanonicalFor !== 'function') {
+		if (typeof params.OLSKCanonical !== 'function') {
 			throw new Error('OLSKErrorInputNotValid');
 		}
 
@@ -40,7 +40,7 @@ const mod = {
 			LCHRecipeSignature: ['OLSKLanguageSwitcherLauncherItemSwitch', params.ParamLanguageCode].join('-'),
 			LCHRecipeName: params.OLSKFormatted(params.OLSKLocalized('OLSKLanguageSwitcherVersionFormat'), params.OLSKLocalized('OLSKLanguageSwitcherVersionName', params.ParamLanguageCode)[params.ParamLanguageCode]),
 			LCHRecipeCallback () {
-				params.ParamWindow.location.href = params.OLSKCanonicalFor(params.ParamRouteConstant, {
+				params.ParamWindow.location.href = params.OLSKCanonical(params.ParamRouteConstant, {
 					OLSKRoutingLanguage: params.ParamLanguageCode,
 				});
 			},

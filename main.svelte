@@ -25,7 +25,7 @@ const mod = {
 	{/if}
 
 	{#if e !== OLSKSharedPageCurrentLanguage}
-		<a class="OLSKLanguageSwitcherVersion" aria-label="{ mod.DataLinkTitle(e) }" title="{ mod.DataLinkTitle(e) }" href="{ window.OLSKCanonicalFor(OLSKSharedActiveRouteConstant, {
+		<a class="OLSKLanguageSwitcherVersion" aria-label="{ mod.DataLinkTitle(e) }" title="{ mod.DataLinkTitle(e) }" href="{ window.OLSKCanonical(OLSKSharedActiveRouteConstant, {
 			OLSKRoutingLanguage: e,
 		}) }">{ e.toUpperCase() }</a>	
 	{/if}
