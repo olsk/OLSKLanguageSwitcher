@@ -18,7 +18,7 @@ const uLocalized = function (inputData, OLSKLanguageSwitcherVersionName) {
 };
 
 const uFormatted = function () {
-	return JSON.stringify(Array.from(arguments)) + '-FORMATTED';
+	return JSON.stringify([...arguments]) + '-FORMATTED';
 };
 
 const uCanonical = function (param1, param2) {
