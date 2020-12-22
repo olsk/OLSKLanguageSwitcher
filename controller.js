@@ -3,7 +3,7 @@ exports.OLSKControllerRoutes = function() {
 		OLSKRoutePath: '/',
 		OLSKRouteMethod: 'get',
 		OLSKRouteFunction (req, res, next) {
-			return res.OLSKLayoutRender(require('path').join(__dirname, 'stub-view'));
+			return res.OLSKExpressLayoutRender(require('path').join(__dirname, 'stub-view'));
 		},
 		OLSKRouteSignature: 'OLSKLanguageSwitcherEJSStubRoute',
 		OLSKRouteLanguageCodes: ['en', 'fr', 'es'],
@@ -11,7 +11,7 @@ exports.OLSKControllerRoutes = function() {
 		OLSKRoutePath: '/svelte',
 		OLSKRouteMethod: 'get',
 		OLSKRouteFunction (req, res, next) {
-			return res.OLSKLayoutRender(require('path').join(__dirname, 'stub-view'));
+			return res.OLSKExpressLayoutRender(require('path').join(__dirname, 'stub-view'));
 		},
 		OLSKRouteSignature: 'OLSKLanguageSwitcherSvelteStubRoute',
 		OLSKRouteLanguageCodes: ['en', 'fr', 'es'],
