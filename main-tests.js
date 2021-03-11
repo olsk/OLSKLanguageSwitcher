@@ -8,19 +8,6 @@ const uWindow = function (inputData = {}) {
 	}, inputData);
 };
 
-const uLocalized = function (inputData, OLSKLanguageSwitcherVersionName) {
-	if (inputData === 'OLSKLanguageSwitcherVersionName') {
-		return {
-			[OLSKLanguageSwitcherVersionName]: OLSKLanguageSwitcherVersionName,
-		};
-	}
-	return inputData + '-LOCALIZED';
-};
-
-const uFormatted = function () {
-	return JSON.stringify([...arguments]) + '-FORMATTED';
-};
-
 const uCanonical = function (param1, param2) {
 	return param1 + '-CANONICAL-' + param2.OLSKRoutingLanguage;
 };
@@ -63,8 +50,6 @@ describe('OLSKLanguageSwitcherLauncherItemSwitch', function test_OLSKLanguageSwi
 	const _OLSKLanguageSwitcherLauncherItemSwitch = function (inputData = {}) {
 		return mod.OLSKLanguageSwitcherLauncherItemSwitch(Object.assign({
 			ParamWindow: uWindow(),
-			OLSKLocalized: uLocalized,
-			OLSKFormatted: uFormatted,
 			ParamLanguageCode: Math.random().toString(),
 			ParamRouteConstant: Math.random().toString(),
 			OLSKCanonical: uCanonical,
@@ -81,22 +66,6 @@ describe('OLSKLanguageSwitcherLauncherItemSwitch', function test_OLSKLanguageSwi
 		throws(function () {
 			_OLSKLanguageSwitcherLauncherItemSwitch({
 				ParamWindow: {},
-			});
-		}, /OLSKErrorInputNotValid/);
-	});
-
-	it('throws if OLSKLocalized not function', function () {
-		throws(function () {
-			_OLSKLanguageSwitcherLauncherItemSwitch({
-				OLSKLocalized: null,
-			});
-		}, /OLSKErrorInputNotValid/);
-	});
-
-	it('throws if OLSKFormatted not function', function () {
-		throws(function () {
-			_OLSKLanguageSwitcherLauncherItemSwitch({
-				OLSKFormatted: null,
 			});
 		}, /OLSKErrorInputNotValid/);
 	});
@@ -174,9 +143,7 @@ describe('OLSKLanguageSwitcherRecipes', function test_OLSKLanguageSwitcherRecipe
 			ParamCurrentLanguage: Math.random().toString(),
 			ParamSpecUI: false,
 			ParamWindow: uWindow(),
-			OLSKLocalized: uLocalized,
 			ParamRouteConstant: Math.random().toString(),
-			OLSKFormatted: uFormatted,
 			OLSKCanonical: uCanonical,
 		}, inputData))
 	};

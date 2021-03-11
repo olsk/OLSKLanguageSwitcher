@@ -24,14 +24,6 @@ const mod = {
 		if (!params.ParamWindow.location) {
 			throw new Error('OLSKErrorInputNotValid');
 		}
-		
-		if (typeof params.OLSKLocalized !== 'function') {
-			throw new Error('OLSKErrorInputNotValid');
-		}
-
-		if (typeof params.OLSKFormatted !== 'function') {
-			throw new Error('OLSKErrorInputNotValid');
-		}
 
 		if (typeof params.ParamLanguageCode !== 'string') {
 			throw new Error('OLSKErrorInputNotValid');
