@@ -25,6 +25,19 @@ const uCanonical = function (param1, param2) {
 	return param1 + '-CANONICAL-' + param2.OLSKRoutingLanguage;
 };
 
+describe('OLSKLanguageSwitcherCodesMap', function test_OLSKLanguageSwitcherCodesMap() {
+
+	it('returns object', function () {
+		deepEqual(mod.OLSKLanguageSwitcherCodesMap(), {
+			en: 'English',
+			fr: 'Français',
+			es: 'Español',
+			pt: 'Português',
+		});
+	});
+
+});
+
 describe('OLSKLanguageSwitcherLauncherFakeItemProxy', function test_OLSKLanguageSwitcherLauncherFakeItemProxy() {
 
 	it('returns object', function () {

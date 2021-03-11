@@ -1,5 +1,14 @@
 const mod = {
 
+	OLSKLanguageSwitcherCodesMap () {
+		return {
+			en: 'English',
+			fr: 'Français',
+			es: 'Español',
+			pt: 'Português',
+		};
+	},
+
 	OLSKLanguageSwitcherLauncherFakeItemProxy () {
 		return {
 			LCHRecipeName: 'OLSKLanguageSwitcherLauncherFakeItemProxy',
