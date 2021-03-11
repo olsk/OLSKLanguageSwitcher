@@ -126,7 +126,7 @@ describe('OLSKLanguageSwitcherLauncherItemSwitch', function test_OLSKLanguageSwi
 	});
 
 	it('returns object', function () {
-		const ParamLanguageCode = Math.random().toString();
+		const ParamLanguageCode = uRandomElement(Object.keys(mod.OLSKLanguageSwitcherCodesMap()));
 		const item = _OLSKLanguageSwitcherLauncherItemSwitch({
 			ParamLanguageCode,
 		});
@@ -136,7 +136,7 @@ describe('OLSKLanguageSwitcherLauncherItemSwitch', function test_OLSKLanguageSwi
 				'OLSKLanguageSwitcherLauncherItemSwitch',
 				ParamLanguageCode,
 			].join('-'),
-			LCHRecipeName: uFormatted(uLocalized('OLSKLanguageSwitcherVersionFormat'), uLocalized('OLSKLanguageSwitcherVersionName', ParamLanguageCode)[ParamLanguageCode]),
+			LCHRecipeName: mod.OLSKLanguageSwitcherCodesMap()[ParamLanguageCode],
 			LCHRecipeCallback: item.LCHRecipeCallback,
 			LCHRecipeIsExcluded: item.LCHRecipeIsExcluded,
 		});

@@ -47,7 +47,7 @@ const mod = {
 
 		return {
 			LCHRecipeSignature: ['OLSKLanguageSwitcherLauncherItemSwitch', params.ParamLanguageCode].join('-'),
-			LCHRecipeName: params.OLSKFormatted(params.OLSKLocalized('OLSKLanguageSwitcherVersionFormat'), params.OLSKLocalized('OLSKLanguageSwitcherVersionName', params.ParamLanguageCode)[params.ParamLanguageCode]),
+			LCHRecipeName: mod.OLSKLanguageSwitcherCodesMap()[params.ParamLanguageCode],
 			LCHRecipeCallback () {
 				params.ParamWindow.location.href = params.OLSKCanonical(params.ParamRouteConstant, {
 					OLSKRoutingLanguage: params.ParamLanguageCode,
