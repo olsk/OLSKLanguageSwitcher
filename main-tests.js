@@ -49,24 +49,17 @@ describe('OLSKLanguageSwitcherLauncherItemSwitch', function test_OLSKLanguageSwi
 
 	const _OLSKLanguageSwitcherLauncherItemSwitch = function (inputData = {}) {
 		return mod.OLSKLanguageSwitcherLauncherItemSwitch(Object.assign({
-			ParamWindow: uWindow(),
 			ParamLanguageCode: Math.random().toString(),
 			ParamRouteConstant: Math.random().toString(),
 			OLSKCanonical: uCanonical,
-		}, inputData))
+		}, inputData), {
+			DebugWindow: inputData.DebugWindow || uWindow(),
+		});
 	}
 
 	it('throws if not object', function () {
 		throws(function () {
 			mod.OLSKLanguageSwitcherLauncherItemSwitch(null);
-		}, /OLSKErrorInputNotValid/);
-	});
-
-	it('throws if ParamWindow not window', function () {
-		throws(function () {
-			_OLSKLanguageSwitcherLauncherItemSwitch({
-				ParamWindow: {},
-			});
 		}, /OLSKErrorInputNotValid/);
 	});
 
@@ -113,20 +106,20 @@ describe('OLSKLanguageSwitcherLauncherItemSwitch', function test_OLSKLanguageSwi
 
 	context('LCHRecipeCallback', function () {
 
-		it('sets ParamWindow.location', function () {
-			const ParamWindow = uWindow({
-				location: {},
-			});
+		it('sets window.location', function () {
 			const ParamRouteConstant = Math.random().toString();
 			const ParamLanguageCode = Math.random().toString();
+			const DebugWindow = uWindow({
+				location: {},
+			});
 			
 			_OLSKLanguageSwitcherLauncherItemSwitch({
-				ParamWindow,
 				ParamLanguageCode,
 				ParamRouteConstant,
+				DebugWindow,
 			}).LCHRecipeCallback();
 
-			deepEqual(ParamWindow.location.href, uCanonical(ParamRouteConstant, {
+			deepEqual(DebugWindow.location.href, uCanonical(ParamRouteConstant, {
 				OLSKRoutingLanguage: ParamLanguageCode,
 			}));
 		});
@@ -142,7 +135,6 @@ describe('OLSKLanguageSwitcherRecipes', function test_OLSKLanguageSwitcherRecipe
 			ParamLanguageCodes: [],
 			ParamCurrentLanguage: Math.random().toString(),
 			ParamSpecUI: false,
-			ParamWindow: uWindow(),
 			ParamRouteConstant: Math.random().toString(),
 			OLSKCanonical: uCanonical,
 		}, inputData))

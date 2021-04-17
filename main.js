@@ -16,12 +16,8 @@ const mod = {
 		};
 	},
 
-	OLSKLanguageSwitcherLauncherItemSwitch (params) {
+	OLSKLanguageSwitcherLauncherItemSwitch (params, debug = {}) {
 		if (typeof params !== 'object' || params === null) {
-			throw new Error('OLSKErrorInputNotValid');
-		}
-
-		if (!params.ParamWindow.location) {
 			throw new Error('OLSKErrorInputNotValid');
 		}
 
@@ -41,7 +37,7 @@ const mod = {
 			LCHRecipeSignature: ['OLSKLanguageSwitcherLauncherItemSwitch', params.ParamLanguageCode].join('-'),
 			LCHRecipeName: mod.OLSKLanguageSwitcherCodesMap()[params.ParamLanguageCode],
 			LCHRecipeCallback () {
-				params.ParamWindow.location.href = params.OLSKCanonical(params.ParamRouteConstant, {
+				(debug.DebugWindow || window).location.href = params.OLSKCanonical(params.ParamRouteConstant, {
 					OLSKRoutingLanguage: params.ParamLanguageCode,
 				});
 			},
