@@ -7,7 +7,7 @@
 
 	<% if (e !== OLSKSharedPageCurrentLanguage) { %>
 		<% _DataLinkTitle = OLSKFormatted(OLSKLocalized('OLSKLanguageSwitcherVersionFormat'), OLSKLocalized('OLSKLanguageSwitcherVersionName')[e]) %>
-		<a class="OLSKLanguageSwitcherVersion" aria-label="<%- _DataLinkTitle %>" title="<%- _DataLinkTitle %>" href="<%= OLSKCanonicalLocalized(OLSKSharedActiveRouteConstant, Object.assign(locals._OLSKSharedParams, {
+		<a class="OLSKLanguageSwitcherVersion" aria-label="<%- _DataLinkTitle %>" title="<%- _DataLinkTitle %>" href="<%= OLSKCanonicalLocalized(OLSKSharedActiveRouteConstant, locals._OLSKSharedParams({
 			OLSKRoutingLanguage: e,
 		})) %>"><%= e.toUpperCase() %></a>
 	<% } %>
