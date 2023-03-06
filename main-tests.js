@@ -20,6 +20,7 @@ describe('OLSKLanguageSwitcherCodesMap', function test_OLSKLanguageSwitcherCodes
 			fr: 'Français',
 			es: 'Español',
 			pt: 'Português',
+			de: 'Deutsch',
 		});
 	});
 

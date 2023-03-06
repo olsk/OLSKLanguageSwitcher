@@ -4,5 +4,8 @@
   "dependencies": {
     "OLSKString": "olsk/OLSKString",
     "OLSKInternational": "olsk/OLSKInternational"
+  },
+  "devDependencies": {
+    "OLSKRouting": "olsk/OLSKRouting"
   }
 }

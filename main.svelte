@@ -4,6 +4,7 @@ export let OLSKSharedPageCurrentLanguage;
 export let OLSKSharedActiveRouteConstant;
 
 import { OLSKLocalized } from 'OLSKInternational';
+import logic from './main.js';
 import OLSKString from 'OLSKString';
 
 const mod = {
@@ -11,7 +12,7 @@ const mod = {
 	// DATA
 
 	DataLinkTitle (inputData) {
-		return OLSKString.OLSKStringFormatted(OLSKLocalized('OLSKLanguageSwitcherVersionFormat'), OLSKLocalized('OLSKLanguageSwitcherVersionName')[inputData]);
+		return OLSKString.OLSKStringFormatted(OLSKLocalized('OLSKLanguageSwitcherVersionFormat'), OLSKLocalized('OLSKLanguageSwitcherVersionName')[inputData], logic.OLSKLanguageSwitcherCodesMap()[inputData]);
 	},
 
 };

@@ -25,7 +25,7 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 		});
 		
 		it('shows OLSKLanguageSwitcherVersion', function() {
-			browser.assert.elements(OLSKLanguageSwitcherVersion, 2);
+			browser.assert.elements(OLSKLanguageSwitcherVersion, kDefaultRoute.OLSKRouteLanguageCodes.length - 1);
 		});
 		
 	});

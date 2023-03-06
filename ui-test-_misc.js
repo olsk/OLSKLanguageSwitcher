@@ -17,7 +17,7 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 		describe('OLSKLanguageSwitcherVersion', function () {
 			
 			it('sets text', function () {
-				browser.assert.text(OLSKLanguageSwitcherVersion, 'FRES');
+				browser.assert.text(OLSKLanguageSwitcherVersion, 'FRESPTDE');
 			});		
 		
 		});

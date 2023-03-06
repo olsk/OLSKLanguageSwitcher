@@ -6,6 +6,7 @@ const mod = {
 			fr: 'Français',
 			es: 'Español',
 			pt: 'Português',
+			de: 'Deutsch',
 		};
 	},
 

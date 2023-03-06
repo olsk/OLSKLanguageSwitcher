@@ -1,6 +1,7 @@
-OLSKLanguageSwitcherVersionFormat: Version in %@
+OLSKLanguageSwitcherVersionFormat: Version in %@ / %@
 OLSKLanguageSwitcherVersionName:
   en: English
   fr: French
   es: Spanish
   pt: Portuguese
+  de: German
