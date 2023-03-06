@@ -1,13 +1,9 @@
-const { OLSKLanguageSwitcherCodesMap } = require('./main.js');
-
 exports.OLSKControllerRoutes = function() {
 	return [{
 		OLSKRoutePath: '/',
 		OLSKRouteMethod: 'get',
 		OLSKRouteFunction (req, res, next) {
-			return res.OLSKExpressLayoutRender(require('path').join(__dirname, 'stub-view'), {
-				OLSKLanguageSwitcherCodesMap,
-			});
+			return res.OLSKExpressLayoutRender(require('path').join(__dirname, 'stub-view'));
 		},
 		OLSKRouteSignature: 'OLSKLanguageSwitcherEJSStubRoute',
 		OLSKRouteLanguageCodes: ['en', 'fr', 'es', 'pt', 'de'],
@@ -15,9 +11,7 @@ exports.OLSKControllerRoutes = function() {
 		OLSKRoutePath: '/svelte',
 		OLSKRouteMethod: 'get',
 		OLSKRouteFunction (req, res, next) {
-			return res.OLSKExpressLayoutRender(require('path').join(__dirname, 'stub-view'), {
-				OLSKLanguageSwitcherCodesMap,
-			});
+			return res.OLSKExpressLayoutRender(require('path').join(__dirname, 'stub-view'));
 		},
 		OLSKRouteSignature: 'OLSKLanguageSwitcherSvelteStubRoute',
 		OLSKRouteLanguageCodes: ['en', 'fr', 'es', 'pt', 'de'],

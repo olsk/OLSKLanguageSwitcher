@@ -1,12 +1,16 @@
 <div class="OLSKLanguageSwitcher">
 
+<%
+const logic = {}; (new Function('exports', include('./main.js')))(logic);
+%>
+
 <% OLSKSharedPageLanguagesAvailable.forEach(function (e) { %>
 	<% if (e === OLSKSharedPageCurrentLanguage) { %>
 		<span class="OLSKLanguageSwitcherSelected"><%= e.toUpperCase() %></span>
 	<% } %>
 
 	<% if (e !== OLSKSharedPageCurrentLanguage) { %>
-		<% _DataLinkTitle = OLSKFormatted(OLSKLocalized('OLSKLanguageSwitcherVersionFormat'), OLSKLocalized('OLSKLanguageSwitcherVersionName')[e], OLSKLanguageSwitcherCodesMap()[e]) %>
+		<% _DataLinkTitle = OLSKFormatted(OLSKLocalized('OLSKLanguageSwitcherVersionFormat'), OLSKLocalized('OLSKLanguageSwitcherVersionName')[e], logic.OLSKLanguageSwitcherCodesMap()[e]) %>
 		<a class="OLSKLanguageSwitcherVersion" aria-label="<%- _DataLinkTitle %>" title="<%- _DataLinkTitle %>" href="<%= OLSKCanonicalLocalized(OLSKSharedActiveRouteConstant, locals._OLSKSharedParams({
 			OLSKRoutingLanguage: e,
 		})) %>"><%= e.toUpperCase() %></a>
