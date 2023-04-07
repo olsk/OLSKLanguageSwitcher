@@ -9,16 +9,21 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 		describe('OLSKLanguageSwitcherSelected', function () {
 			
 			it('sets text', function () {
-				browser.assert.text(OLSKLanguageSwitcherSelected, 'EN');
+				return browser.assert.text(OLSKLanguageSwitcherSelected, 'EN');
 			});		
 		
 		});
 
 		describe('OLSKLanguageSwitcherVersion', function () {
-			
-			it('sets text', function () {
-				browser.assert.text(OLSKLanguageSwitcherVersion, 'FRESPTDE');
-			});		
+
+			'FR,ES,PT,DE'.split(',').forEach(function (e, i) {
+
+				it('sets text ' + e, function () {
+
+					return browser.assert.text(OLSKLanguageSwitcherVersion + `:nth-of-type(${ i + 1 })`, e);
+				});		
+				
+			});
 		
 		});
 

@@ -17,15 +17,15 @@ require('./controller.js').OLSKControllerRoutes().forEach(function (kDefaultRout
 		});
 		
 		it('shows OLSKLanguageSwitcher', function() {
-			browser.assert.elements(OLSKLanguageSwitcher, 1);
+			return browser.assert.elements(OLSKLanguageSwitcher, 1);
 		});
 		
 		it('shows OLSKLanguageSwitcherSelected', function() {
-			browser.assert.elements(OLSKLanguageSwitcherSelected, 1);
+			return browser.assert.elements(OLSKLanguageSwitcherSelected, 1);
 		});
 		
 		it('shows OLSKLanguageSwitcherVersion', function() {
-			browser.assert.elements(OLSKLanguageSwitcherVersion, kDefaultRoute.OLSKRouteLanguageCodes.length - 1);
+			return browser.assert.elements(OLSKLanguageSwitcherVersion, kDefaultRoute.OLSKRouteLanguageCodes.length - 1);
 		});
 		
 	});
